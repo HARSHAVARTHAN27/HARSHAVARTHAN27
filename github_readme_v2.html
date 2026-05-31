@@ -1,0 +1,197 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=VT323&display=swap');
+
+  .wrap {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+    color: #cdd6f4;
+  }
+
+  .topbar {
+    background: #161616;
+    border-bottom: 1px solid #222;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dr { background: #ff5f57; }
+  .dy { background: #ffbd2e; }
+  .dg { background: #28c840; }
+
+  .topbar-label {
+    margin-left: 10px;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 1px;
+  }
+
+  .inner {
+    padding: 32px 36px 28px;
+  }
+
+  .name-line {
+    font-family: 'VT323', monospace;
+    font-size: 58px;
+    letter-spacing: 6px;
+    line-height: 1;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, #89dceb 0%, #cba6f7 50%, #89dceb 100%);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+  .role-line {
+    font-size: 15px;
+    color: #6c7086;
+    margin-bottom: 6px;
+    min-height: 22px;
+  }
+
+  .role-line .prefix { color: #45475a; }
+  .role-line .typed { color: #a6e3a1; }
+  .role-line .cur {
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    background: #a6e3a1;
+    vertical-align: middle;
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #1e1e2e;
+    margin: 24px 0;
+  }
+
+  .links-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    color: #6c7086;
+    border: 1px solid #2a2a3d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #161622;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .link-pill:hover {
+    color: #cba6f7;
+    border-color: #cba6f7;
+    background: #1e1a2e;
+  }
+
+  .star-line {
+    font-size: 12px;
+    color: #313244;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .star-line .stars { color: #f9e2af; }
+
+  .loc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #45475a;
+    margin-top: 8px;
+  }
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">GitHub profile README preview — Harshavarthan S, Full Stack Developer and AI ML Engineer</h2>
+
+<div class="wrap">
+  <div class="topbar">
+    <span class="dot dr"></span>
+    <span class="dot dy"></span>
+    <span class="dot dg"></span>
+    <span class="topbar-label">HarshaVarthan-S / README.md</span>
+  </div>
+  <div class="inner">
+    <div class="name-line">HARSHAVARTHAN S</div>
+
+    <div class="role-line">
+      <span class="prefix">~/$ </span>
+      <span class="typed" id="typed-text"></span><span class="cur" id="cursor"></span>
+    </div>
+
+    <div class="loc-badge">
+      <i class="ti ti-map-pin" aria-hidden="true" style="font-size:13px;color:#45475a"></i>
+      Chennai, India
+    </div>
+
+    <hr class="divider">
+
+    <div class="links-row">
+      <a class="link-pill" href="#">
+        <i class="ti ti-briefcase" aria-hidden="true" style="font-size:13px"></i> Portfolio
+      </a>
+      <a class="link-pill" href="#">
+        <i class="ti ti-brand-linkedin" aria-hidden="true" style="font-size:13px"></i> LinkedIn
+      </a>
+      <a class="link-pill" href="#">
+        <i class="ti ti-brand-x" aria-hidden="true" style="font-size:13px"></i> Twitter
+      </a>
+      <a class="link-pill" href="#">
+        <i class="ti ti-brand-instagram" aria-hidden="true" style="font-size:13px"></i> Instagram
+      </a>
+    </div>
+
+    <div class="star-line">
+      <span class="stars">★</span>
+      If you like my work, consider starring some repositories!
+      <span class="stars">★</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const roles = ["Full Stack Developer", "AI / ML Engineer"];
+let ri = 0, ci = 0, deleting = false;
+const el = document.getElementById('typed-text');
+
+function type() {
+  const word = roles[ri];
+  if (!deleting) {
+    el.textContent = word.slice(0, ++ci);
+    if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+    setTimeout(type, 70);
+  } else {
+    el.textContent = word.slice(0, --ci);
+    if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(type, 300); return; }
+    setTimeout(type, 40);
+  }
+}
+type();
+</script>
