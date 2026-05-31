@@ -26,7 +26,7 @@
 <div align="center">
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-1e1e2e?style=for-the-badge&logo=vercel&logoColor=cba6f7)](https://harshavarthan-portfolio.netlify.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-1e1e2e?style=for-the-badge&logo=linkedin&logoColor=89b4fa)](https://www.linkedin.com/in/harshavarthan-s-31662b252/))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-1e1e2e?style=for-the-badge&logo=linkedin&logoColor=89b4fa)](https://www.linkedin.com/in/harshavarthan-s-31662b252/)
 [![Instagram](https://img.shields.io/badge/Instagram-1e1e2e?style=for-the-badge&logo=instagram&logoColor=f38ba8)](https://www.instagram.com/harshavarthan_official_/)
 
 </div>
